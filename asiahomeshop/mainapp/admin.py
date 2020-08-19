@@ -12,7 +12,7 @@ admin.site.register(Category, CategoryConfig)
 
 
 class ProductConfig(admin.ModelAdmin):
-    fields = ('name', 'category', 'price', 'slug_product')
+    fields = ('name', 'category', 'img1', 'img2', 'price', 'price_disc', 'discount', 'new', 'rating', 'slug_product')
     list_display = ('name', 'category', 'price')
     prepopulated_fields = {'slug_product': ('name',)}
 

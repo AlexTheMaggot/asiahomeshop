@@ -72,60 +72,13 @@
                                     <!-- Tab One Start -->
                                     <div id="shop-1" class="tab-pane active">
                                         <div class="row">
-                                            <div class="col-xl-3 col-md-6 col-lg-4 col-sm-6 col-xs-12">
-                                                <article class="list-product">
-                                                    <div class="img-block">
-                                                        <a href="single-product-variable.html" class="thumbnail">
-                                                            <img class="first-img" src="{% static 'images/product-image/asiahome/1pro.png' %}" alt="" />
-                                                            <img class="second-img" src="{% static 'images/product-image/asiahome/1pro.png' %}" alt="" />
-                                                        </a>
-                                                        <div class="quick-view">
-                                                            <a class="quick_view" href="shop-left-sidebar.html#" data-link-action="quickview" title="Quick view" data-toggle="modal" data-target="#exampleModal">
-                                                                <i class="ion-ios-search-strong"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <ul class="product-flag">
-                                                        <li class="new">Новый</li>
-                                                    </ul>
-                                                    <div class="product-decs">
-                                                        <a class="inner-link" href="shop-4-column.html"><span>Asiahomeshop</span></a>
-                                                        <h2><a href="single-product-variable.html" class="product-link">Увлажняющее масло для восстановления блеска волос Wonder Hair Oil 10ml, Lador</a></h2>
-                                                        <div class="rating-product">
-                                                            <i class="ion-android-star"></i>
-                                                            <i class="ion-android-star"></i>
-                                                            <i class="ion-android-star"></i>
-                                                            <i class="ion-android-star"></i>
-                                                            <i class="ion-android-star"></i>
-                                                        </div>
-                                                        <div class="pricing-meta">
-                                                            <ul>
-                                                                <li class="old-price">450&#8381;</li>
-                                                                <li class="current-price">340&#8381;</li>
-                                                                <li class="discount-price">-5%</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="add-to-link">
-                                                        <ul>
-                                                            <li class="cart"><a class="cart-btn" href="shop-left-sidebar.html#">В корзину </a></li>
-                                                            <li>
-                                                                <a href="wishlist.html"><i class="ion-android-favorite-outline"></i></a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="compare.html"><i class="ion-ios-shuffle-strong"></i></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </article>
-                                            </div>
                                             {% for p in products %}
                                             <div class="col-xl-3 col-md-6 col-lg-4 col-sm-6 col-xs-12">
                                                 <article class="list-product">
                                                     <div class="img-block">
                                                         <a href="single-product-variable.html" class="thumbnail">
-                                                            <img class="first-img" src="{% static 'images/product-image/asiahome/1pro.png' %}" alt="" />
-                                                            <img class="second-img" src="{% static 'images/product-image/asiahome/1pro.png' %}" alt="" />
+                                                            <img class="first-img" src="{{ p.img1.url }}" alt="" />
+                                                            <img class="second-img" src="{{ p.img2.url }}" alt="" />
                                                         </a>
                                                         <div class="quick-view">
                                                             <a class="quick_view" href="shop-left-sidebar.html#" data-link-action="quickview" title="Quick view" data-toggle="modal" data-target="#exampleModal">
@@ -133,12 +86,37 @@
                                                             </a>
                                                         </div>
                                                     </div>
+                                                    {% if p.new == True %}
                                                     <ul class="product-flag">
                                                         <li class="new">Новый</li>
                                                     </ul>
+                                                    {% endif %}
                                                     <div class="product-decs">
                                                         <a class="inner-link" href="shop-4-column.html"><span>Asiahomeshop</span></a>
                                                         <h2><a href="single-product-variable.html" class="product-link">{{ p.name }}</a></h2>
+                                                        {% if p.rating == '1' %}
+                                                        <div class="rating-product">
+                                                            <i class="ion-android-star"></i>
+                                                        </div>
+                                                        {% elif p.rating == '2' %}
+                                                        <div class="rating-product">
+                                                            <i class="ion-android-star"></i>
+                                                            <i class="ion-android-star"></i>
+                                                        </div>
+                                                        {% elif p.rating == '3' %}
+                                                        <div class="rating-product">
+                                                            <i class="ion-android-star"></i>
+                                                            <i class="ion-android-star"></i>
+                                                            <i class="ion-android-star"></i>
+                                                        </div>
+                                                        {% elif p.rating == '4' %}
+                                                        <div class="rating-product">
+                                                            <i class="ion-android-star"></i>
+                                                            <i class="ion-android-star"></i>
+                                                            <i class="ion-android-star"></i>
+                                                            <i class="ion-android-star"></i>
+                                                        </div>
+                                                        {% else %}
                                                         <div class="rating-product">
                                                             <i class="ion-android-star"></i>
                                                             <i class="ion-android-star"></i>
@@ -146,11 +124,18 @@
                                                             <i class="ion-android-star"></i>
                                                             <i class="ion-android-star"></i>
                                                         </div>
+                                                        {% endif %}
                                                         <div class="pricing-meta">
                                                             <ul>
-                                                                <li class="old-price">450&#8381;</li>
-                                                                <li class="current-price">{{ p.price }}&#8381;</li>
-                                                                <li class="discount-price">-5%</li>
+                                                                {% if p.price_disc %}
+                                                                <li class="old-price">{{ p.price }}&#8381;</li>
+                                                                <li class="current-price">{{ p.price_disc }}&#8381;</li>
+                                                                {% else %}
+                                                                <li class="old-price not-cut">{{ p.price }}&#8381;</li>
+                                                                {% endif %}
+                                                                {% if p.discount %}
+                                                                <li class="discount-price">-{{ p.discount }}%</li>
+                                                                {% endif %}
                                                             </ul>
                                                         </div>
                                                     </div>
