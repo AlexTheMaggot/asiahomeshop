@@ -1,0 +1,121 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block title %}Контакты{% endblock %}
+{% block content %}
+<body>
+        <!-- main layout start from here -->
+        <!--====== PRELOADER PART START ======-->
+
+        <!-- <div id="preloader">
+        <div class="preloader">
+            <span></span>
+            <span></span>
+        </div>
+    </div> -->
+
+        <!--====== PRELOADER PART ENDS ======-->
+        <div id="main">
+            <!-- Header Start -->
+            {% include 'header.html' %}
+            <!-- Header End -->
+            <!-- Breadcrumb Area start -->
+            <section class="breadcrumb-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="breadcrumb-content">
+                                <h1 class="breadcrumb-hrading">Наши контакты</h1>
+                                <ul class="breadcrumb-links">
+                                    <li><a href="index.html">Главная</a></li>
+                                    <li>Наши контакты</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Breadcrumb Area End -->
+            <!-- contact area start -->
+            <div class="contact-area mtb-60px">
+                <div class="container">
+                    <div class="custom-row-2">
+                        <div class="col-lg-4 col-md-5">
+                            <div class="contact-info-wrap">
+                                <div class="single-contact-info">
+                                    <div class="contact-icon">
+                                        <i class="fa fa-phone"></i>
+                                    </div>
+                                    <div class="contact-info-dec">
+                                        <a href="tel:+79269267007">+7 926 926 70 07</a>
+                                    </div>
+                                </div>
+                                <div class="single-contact-info">
+                                    <div class="contact-icon">
+                                        <i class="fa fa-globe"></i>
+                                    </div>
+                                    <div class="contact-info-dec">
+                                        <p><a href="contact.html">INFO@ASIAHOMESHOP.RU</a></p>
+                                        <p><a href="contact.html">urwebsitenaem.com</a></p>
+                                    </div>
+                                </div>
+                                <div class="contact-social">
+                                    <h3>Время приёма заказов через сайт: круглосуточно</h3>
+                                    <h3>Подпишитесь на нас</h3>
+                                    <div class="social-info">
+                                        <ul>
+                                            <li>
+                                                <a href="https://api.whatsapp.com/send?text=%D0%9E%20%D0%BD%D0%B0%D1%81%20https%3A%2F%2Fasiahomeshop.ru%2Fabout_us.html&utm_source=share2"><i class="ion-social-whatsapp"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.instagram.com/asia_home_shop/"><i class="ion-social-instagram"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href='https://t.me/asia_home_shop'><i class="fab fa-telegram"></i></a>
+                                            </li>   
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-7">
+                            <div class="contact-form">
+                                <div class="contact-title mb-30">
+                                    <h2>Свяжитесь с нами</h2>
+                                </div>
+                                <form class="contact-form-style" id="contact-form" action="{% url 'applications' %}" method="POST">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <input name="name" placeholder="Имя" type="text" />
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <input name="mail" placeholder="Электронная почта*" type="email" />
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <input name="subject" placeholder="Сообщение" type="text" />
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <textarea name="comment" placeholder="Комментарий*"></textarea>
+                                            <input type="submit">
+                                        </div>
+                                    </div>
+                                </form>
+                                <p class="form-messege"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- contact area end -->
+                        <!-- Footer Area start -->
+            {% include 'footer.html' %}
+
+            <!--  Footer Area End -->
+        </div>
+
+        <!-- Modal -->
+        {% include 'modal_wrapper.html' %}
+        <!-- Modal end -->
+        <!-- Modal end -->
+</html>
+{% endblock %}

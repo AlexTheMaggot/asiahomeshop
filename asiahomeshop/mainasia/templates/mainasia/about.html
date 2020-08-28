@@ -1,0 +1,118 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block title %}О нас{% endblock %}
+{% block content %}
+    <body>
+        <!-- main layout start from here -->
+        <!--====== PRELOADER PART START ======-->
+
+        <!-- <div id="preloader">
+        <div class="preloader">
+            <span></span>
+            <span></span>
+        </div>
+    </div> -->
+
+        <!--====== PRELOADER PART ENDS ======-->
+        <div id="main">
+            <!-- Header Start -->
+            <!-- Header Start -->
+            {% include 'header.html' %}
+            <!-- Header End -->
+            <!-- Breadcrumb Area start -->
+            <section class="breadcrumb-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="breadcrumb-content">
+                                <h1 class="breadcrumb-hrading">О нас</h1>
+                                <ul class="breadcrumb-links">
+                                    <li><a href="index.html">Главная</a></li>
+                                    <li>О нас</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Breadcrumb Area End -->
+
+            <!-- About Area Start -->
+            <section class="about-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 mb-res-sm-50px">
+                            <div class="about-left-image">
+                                <img src="{% static 'images/feature-bg/1.jpg' %}" alt="" class="img-responsive" />
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="about-content">
+                                <div class="about-title">
+                                    <h2>Добро пожаловать в Asiahomeshop</h2>
+                                </div>
+                                <p class="mb-30px">
+                                    Asia Home Shop - это магазин сертифицированной натуральной корейской и японской косметики и бытовой химии.
+⠀
+                                    Каждый продукт, предоставленный в каталоге, создан из натуральных природных компонентов и имеет 100% эффективность, доказанную международными исследованиями и сертификатами качества, а также, признанием миллионов людей во всем мире&#10084;
+⠀                                   <br>
+                                    Мы работаем с 2014 года и предлагаем своим покупателям только самую лучшую продукцию, которой пользуемся сами!
+⠀
+                                    Наши поставщики - крупнейшие в Южной Корее и Японии.
+                                    Мы тщательно следим за условиями хранения и сроками годности товаров.
+                                </p>
+                                <p>
+                                    К каждому вашему заказу мы обязательно кладём подарок.
+                                    Мы дорожим своей репутацией и стараемся дать клиентам лучший сервис
+⠀
+                                    Заказы можно оформлять круглосуточно, они будут сформированы и отправлены не позднее, чем через 2 дня после оформления.
+                                    Все продукты тщательно упаковываются, чтобы исключить повреждения при транспортировке.
+⠀                                   <br>
+                                    Для нас важен каждый клиент, поэтому мы постоянно улучшаем сервис и делаем всё, чтобы наше с Вами сотрудничество было долгим и радостным.&#10084;
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-60px">
+                        <div class="col-md-4 mb-res-sm-30px">
+                            <div class="single-about">
+                                <h4>O сервисе AsiaHomeShop.ru</h4>
+                                <p>
+                                   Мы ценим своих клиентов и предлагаем только качественную продукцию, которой пользуемся сами.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-res-sm-30px">
+                            <div class="single-about">
+                                <h4>Наша команда</h4>
+                                <p>
+                                    Маленький семейный бизнес с 2014 года перерос <br>в компанию со штатом в 8 человек и собственным складом.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="single-about">
+                                <h4>Преимущества</h4>
+                                <p>
+                                    Бесплатная доставка при покупке от 3000 рублей и подарок к каждому заказу, а также подробная консультация по нашей продукции.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Area End -->
+
+            <!-- Footer Area start -->
+            {% include 'footer.html' %}
+            <!--  Footer Area End -->
+        </div>
+
+        {% include 'modal_wrapper.html' %}
+        <!-- Modal end -->
+            <!--  Footer Area End -->
+        </div>
+    </body>
+</html>
+{% endblock %}

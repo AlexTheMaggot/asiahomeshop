@@ -1,0 +1,118 @@
+{% load static %}
+<footer class="footer-area">
+                <div class="footer-top">
+                    <div class="container">
+                        <div class="row">
+                            <!-- footer single wedget -->
+                            <div class="col-md-6 col-lg-4">
+                                <!-- footer logo -->
+                                <div class="footer-logo">
+                                    <a href="/"><img src="{% static 'images/logo/logo5.png' %}" alt="" /></a>
+                                </div>
+                                <!-- footer logo -->
+                                <div class="about-footer">
+                                    <p class="text-info">Интернет-магазин корейской косметики и японской бытовой химии</p>
+                                    <div class="need-help">
+                                        <p class="phone-info">
+                                            Нужна помощь?
+                                            <span>
+                                                <a href="tel:+79269267007">+7 926 926 70 07</a>
+                                            </span>
+                                            info@asiahomeshop.ru
+                                        </p>
+                                    </div>
+                                    <div class="social-info">
+                                        <ul>
+                                            <li>
+                                                <a href="whatsapp://+79269267007"><i class="ion-social-whatsapp"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.instagram.com/asia_home_shop/"><i class="ion-social-instagram"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href='https://t.me/asia_home_shop'><i class="fab fa-telegram"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- footer single wedget -->
+                            <div class="col-md-6 col-lg-2 mt-res-sx-30px mt-res-md-30px">
+                                <div class="single-wedge">
+                                    <h4 class="footer-herading">Навигация</h4>
+                                    <div class="footer-links">
+                                        <ul>
+                                            <li><a href="/#">Доставка</a></li>
+                                            <li><a href="{% url 'shop' %}">О нас</a></li>
+                                            <li><a href="{% url 'shop' %}">Магазин</a></li>
+                                            <li><a href="/#">Безопасная оплата</a></li>
+                                            <li><a href="{% url 'contact' %}">Связаться с нами</a></li>
+                                            <li><a href="{% url 'cart' %}">Корзина</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- footer single wedget -->
+                            <div class="col-md-6 col-lg-2 mt-res-md-50px mt-res-sx-30px mt-res-md-30px">
+                                <div class="single-wedge">
+                                    <h4 class="footer-herading">Полезные ссылки</h4>
+                                    <div class="footer-links">
+                                        <ul>
+                                            <li><a href="{% url 'blog' %}">Блог</a></li>
+                                            <li><a href="login.html">Войти | Регистрация</a></li>
+                                            <li><a href="my-account.html">Мой аккаунт</a></li>
+                                            <li><a href="{% url 'shop' %}">Популярные продукты</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- footer single wedget -->
+                            <div class="col-md-6 col-lg-4 mt-res-md-50px mt-res-sx-30px mt-res-md-30px">
+                                <div class="single-wedge">
+                                    <h4 class="footer-herading">Подписаться</h4>
+                                    <div class="subscrib-text">
+                                        <p>Вы можете подписаться на наши новости и всегда быть в курсе событий</p>
+                                    </div>
+
+                                    <div id="mc_embed_signup" class="subscribe-form">
+                                        <form
+                                            id="mc-embedded-subscribe-form"
+                                            class="validate"
+                                            novalidate=""
+                                            target="_blank"
+                                            name="mc-embedded-subscribe-form"
+                                            method="post"
+                                            action="http://devitems.us11.list-manage.com/subscribe/post?u=6bbb9b6f5827bd842d9640c82&amp;id=05d85f18ef"
+                                        >
+                                            <div id="mc_embed_signup_scroll" class="mc-form">
+                                                <input class="email" type="email" required="" placeholder="Ваш электронный адресс" name="EMAIL" value="" />
+                                                <div class="mc-news" aria-hidden="true" style="position: absolute; left: -5000px;">
+                                                    <input type="text" value="" tabindex="-1" name="b_6bbb9b6f5827bd842d9640c82_05d85f18ef" />
+                                                </div>
+                                                <div class="clear">
+                                                    <input id="mc-embedded-subscribe" class="button" type="submit" name="subscribe" value="Клац" />
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- footer single wedget -->
+                        </div>
+                    </div>
+                </div>
+                <!--  Footer Bottom Area start -->
+                <div class="footer-bottom">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-4">
+                                <p class="copy-text">Copyright © <a href="#"> Asiahomeshop</a>. All Rights Reserved</p>
+                            </div>
+                            <div class="col-md-6 col-lg-8">
+                                <img class="payment-img" src="{% static 'images/icons/visa2.png' %}" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  Footer Bottom Area End-->
+            </footer>

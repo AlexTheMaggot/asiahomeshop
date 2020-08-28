@@ -1,0 +1,250 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block title %}Блог{% endblock %}
+{% block content %}
+
+    <body>
+        <!-- main layout start from here -->
+        <!--====== PRELOADER PART START ======-->
+
+        <!-- <div id="preloader">
+        <div class="preloader">
+            <span></span>
+            <span></span>
+        </div>
+    </div> -->
+
+        <!--====== PRELOADER PART ENDS ======-->
+        <div id="main">
+            <!-- Header Start -->
+            <!-- Header Start -->
+            {% include 'header.html' %}
+
+            <!-- Header End -->
+            <!-- Breadcrumb Area start -->
+            <section class="breadcrumb-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="breadcrumb-content">
+                                <h1 class="breadcrumb-hrading">Блог</h1>
+                                <ul class="breadcrumb-links">
+                                    <li><a href="index.html">Главная</a></li>
+                                    <li>Блог</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Breadcrumb Area End -->
+            <!-- Shop Category Area End -->
+            <div class="shop-category-area blog-grid">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-9 order-lg-last col-md-12 order-md-first">
+                            <div class="blog-posts">
+                                <div class="row">
+                                    <div class="col-md-6 mb-res-sm-30px">
+                                        <div class="single-blog-post blog-grid-post">
+                                            <div class="blog-post-media">
+                                                <div class="blog-image">
+                                                    <a href="blog-grid-left-sidebar.html#"><img src="{% static 'images/blog-image/blog-1.jpg' %}" alt="blog" /></a>
+                                                </div>
+                                            </div>
+                                            <div class="blog-post-content-inner mt-30">
+                                                <h4 class="blog-title"><a href="blog-grid-left-sidebar.html#">This is Third Post For XipBlog</a></h4>
+                                                <ul class="blog-page-meta">
+                                                    <li>
+                                                        <a href="blog-grid-left-sidebar.html#"><i class="ion-person"></i> Admin</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="blog-grid-left-sidebar.html#"><i class="ion-calendar"></i> 24 April, 2020</a>
+                                                    </li>
+                                                </ul>
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum eius expedita hic, vel minima minus reiciendis consequuntur ab beatae necessitatibus amet magni itaque, nostrum vero eos
+                                                    nobis modi temporibus recusandae.
+                                                </p>
+                                                <a class="read-more-btn" href="blog-single-left-sidebar.html"> Read More <i class="ion-android-arrow-dropright-circle"></i></a>
+                                            </div>
+                                        </div>
+                                        <!-- single blog post -->
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="single-blog-post blog-grid-post">
+                                            <div class="blog-post-media">
+                                                <div class="blog-gallery">
+                                                    <div class="gallery-item">
+                                                        <a href="blog-grid-left-sidebar.html#"><img src="{% static 'images/blog-image/blog-2.jpg' %}" alt="blog" /></a>
+                                                    </div>
+                                                    <div class="gallery-item">
+                                                        <a href="blog-grid-left-sidebar.html#"><img src="{% static 'images/blog-image/blog-3.jpg' %}" alt="blog" /></a>
+                                                    </div>
+                                                    <div class="gallery-item">
+                                                        <a href="blog-grid-left-sidebar.html#"><img src="{% static 'images/blog-image/blog-4.jpg' %}" alt="blog" /></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="blog-post-content-inner mt-30">
+                                                <h4 class="blog-title"><a href="blog-grid-left-sidebar.html#">This is Third Post For XipBlog</a></h4>
+                                                <ul class="blog-page-meta">
+                                                    <li>
+                                                        <a href="blog-grid-left-sidebar.html#"><i class="ion-person"></i> Admin</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="blog-grid-left-sidebar.html#"><i class="ion-calendar"></i> 24 April, 2020</a>
+                                                    </li>
+                                                </ul>
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum eius expedita hic, vel minima minus reiciendis consequuntur ab beatae necessitatibus amet magni itaque, nostrum vero eos
+                                                    nobis modi temporibus recusandae.
+                                                </p>
+                                                <a class="read-more-btn" href="blog-single-left-sidebar.html"> Read More <i class="ion-android-arrow-dropright-circle"></i></a>
+                                            </div>
+                                        </div>
+                                        <!-- single blog post -->
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="single-blog-post blog-grid-post mt-30">
+                                            <div class="blog-post-media">
+                                                <div class="blog-post-audio">
+                                                    <iframe
+                                                        class="embed-responsive-item"
+                                                        width="500"
+                                                        height="320"
+                                                        allow="autoplay"
+                                                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/182537870&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"
+                                                    ></iframe>
+                                                </div>
+                                            </div>
+                                            <div class="blog-post-content-inner mt-30">
+                                                <h4 class="blog-title"><a href="blog-grid-left-sidebar.html#">This is Third Post For XipBlog</a></h4>
+                                                <ul class="blog-page-meta">
+                                                    <li>
+                                                        <a href="blog-grid-left-sidebar.html#"><i class="ion-person"></i> Admin</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="blog-grid-left-sidebar.html#"><i class="ion-calendar"></i> 24 April, 2020</a>
+                                                    </li>
+                                                </ul>
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum eius expedita hic, vel minima minus reiciendis consequuntur ab beatae necessitatibus amet magni itaque, nostrum vero eos
+                                                    nobis modi temporibus recusandae.
+                                                </p>
+                                                <a class="read-more-btn" href="blog-single-left-sidebar.html"> Read More <i class="ion-android-arrow-dropright-circle"></i></a>
+                                            </div>
+                                        </div>
+                                        <!-- single blog post -->
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="single-blog-post blog-grid-post mt-30">
+                                            <div class="blog-post-media">
+                                                <div class="blog-post-video">
+                                                    <iframe src="https://www.youtube.com/embed/tvPnrfQCiCo" allow="autoplay; encrypted-media" allowfullscreen="" width="540" height="320"></iframe>
+                                                </div>
+                                            </div>
+
+                                            <div class="blog-post-content-inner mt-30">
+                                                <h4 class="blog-title"><a href="blog-grid-left-sidebar.html#">This is Third Post For XipBlog</a></h4>
+                                                <ul class="blog-page-meta">
+                                                    <li>
+                                                        <a href="blog-grid-left-sidebar.html#"><i class="ion-person"></i> Admin</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="blog-grid-left-sidebar.html#"><i class="ion-calendar"></i> 24 April, 2020</a>
+                                                    </li>
+                                                </ul>
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum eius expedita hic, vel minima minus reiciendis consequuntur ab beatae necessitatibus amet magni itaque, nostrum vero eos
+                                                    nobis modi temporibus recusandae.
+                                                </p>
+                                                <a class="read-more-btn" href="blog-single-left-sidebar.html"> Read More <i class="ion-android-arrow-dropright-circle"></i></a>
+                                            </div>
+                                        </div>
+                                        <!-- single blog post -->
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="single-blog-post blog-grid-post mt-30">
+                                            <div class="blog-post-media">
+                                                <div class="blog-image">
+                                                    <a href="blog-grid-left-sidebar.html#"><img src="{% static 'images/blog-image/blog-3.jpg' %}" alt="blog" /></a>
+                                                </div>
+                                            </div>
+                                            <div class="blog-post-content-inner mt-30">
+                                                <h4 class="blog-title"><a href="blog-grid-left-sidebar.html#">This is Third Post For XipBlog</a></h4>
+                                                <ul class="blog-page-meta">
+                                                    <li>
+                                                        <a href="blog-grid-left-sidebar.html#"><i class="ion-person"></i> Admin</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="blog-grid-left-sidebar.html#"><i class="ion-calendar"></i> 24 April, 2020</a>
+                                                    </li>
+                                                </ul>
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum eius expedita hic, vel minima minus reiciendis consequuntur ab beatae necessitatibus amet magni itaque, nostrum vero eos
+                                                    nobis modi temporibus recusandae.
+                                                </p>
+                                                <a class="read-more-btn" href="blog-single-left-sidebar.html"> Read More <i class="ion-android-arrow-dropright-circle"></i></a>
+                                            </div>
+                                        </div>
+                                        <!-- single blog post -->
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="single-blog-post blog-grid-post mt-30">
+                                            <div class="blog-post-media">
+                                                <div class="blog-image">
+                                                    <a href="blog-grid-left-sidebar.html#"><img src="{% static 'images/blog-image/blog-4.jpg' %}" alt="blog" /></a>
+                                                </div>
+                                            </div>
+                                            <div class="blog-post-content-inner mt-30">
+                                                <h4 class="blog-title"><a href="blog-grid-left-sidebar.html#">This is Third Post For XipBlog</a></h4>
+                                                <ul class="blog-page-meta">
+                                                    <li>
+                                                        <a href="blog-grid-left-sidebar.html#"><i class="ion-person"></i> Admin</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="blog-grid-left-sidebar.html#"><i class="ion-calendar"></i> 24 April, 2020</a>
+                                                    </li>
+                                                </ul>
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum eius expedita hic, vel minima minus reiciendis consequuntur ab beatae necessitatibus amet magni itaque, nostrum vero eos
+                                                    nobis modi temporibus recusandae.
+                                                </p>
+                                                <a class="read-more-btn" href="blog-single-left-sidebar.html"> Read More <i class="ion-android-arrow-dropright-circle"></i></a>
+                                            </div>
+                                        </div>
+                                        <!-- single blog post -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!--  Pagination Area Start -->
+                            <div class="pro-pagination-style text-center">
+                                <ul>
+                                    <li>
+                                        <a class="prev" href="blog-grid-left-sidebar.html#"><i class="ion-ios-arrow-left"></i></a>
+                                    </li>
+                                    <li><a class="active" href="blog-grid-left-sidebar.html#">1</a></li>
+                                    <li><a href="blog-grid-left-sidebar.html#">2</a></li>
+                                    <li>
+                                        <a class="next" href="blog-grid-left-sidebar.html#"><i class="ion-ios-arrow-right"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--  Pagination Area End -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Shop Category Area End -->
+            <!-- Footer Area start -->
+             {% include 'footer.html' %}
+            <!--  Footer Area End -->
+        </div>
+
+        <!-- Modal -->
+         {% include 'modal_wrapper.html' %}
+        <!-- Modal end -->
+    </body>
+</html>
+{% endblock %}
