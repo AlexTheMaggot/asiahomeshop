@@ -1,6 +1,6 @@
 {% extends 'wrapper.html' %}
 {% load static %}
-{% block title %}Сингл{% endblock %}
+{% block title %}{{ product.name }}{% endblock %}
 {% block content %}
     <body>
         <!-- main layout start from here -->
@@ -43,40 +43,64 @@
                             <div class="product-details-img product-details-tab">
                                 <div class="zoompro-wrap zoompro-2">
                                     <div class="zoompro-border zoompro-span">
-                                        <img class="zoompro" src="{% static 'images/product-image/asiahome/1pro_360x360.jpg' %}" data-zoom-image="{% static 'images/product-image/asiahome/1pro_800x800.jpg' %}" alt="" />
+                                        <img class="zoompro" src="{{ product.img1.url }}" data-zoom-image="{{ product.img1.url }}" alt="" />
                                     </div>
                                 </div>
                                 <div id="gallery" class="product-dec-slider-2">
-                                    <a class="active" data-image="{% static 'images/product-image/asiahome/1pro_360x360.jpg' %}" data-zoom-image="{% static 'images/product-image/asiahome/1pro_800x800.jpg' %}">
-                                        <img src="{% static 'images/product-image/asiahome/1pro_360x360.jpg' %}" alt="" />
+                                    <a class="active" data-image="{{ product.img1.url }}" data-zoom-image="{{ product.img1.url }}">
+                                        <img src="{{ product.img1.url }}" alt="" />
                                     </a>
-                                    <a data-image="{% static 'images/product-image/asiahome/4pro_360x360.jpg' %}" data-zoom-image="{% static 'images/product-image/asiahome/4pro_800x800.jpg' %}">
-                                        <img src="{% static 'images/product-image/asiahome/4pro_360x360.jpg' %}" alt="" />
-                                    </a>
-                                    <a class="active" data-image="{% static 'images/product-image/asiahome/1pro_360x360.jpg' %}" data-zoom-image="{% static 'images/product-image/asiahome/1pro_800x800.jpg' %}">
-                                        <img src="{% static 'images/product-image/asiahome/1pro_360x360.jpg' %}" alt="" />
-                                    </a>
-                                    <a data-image="{% static 'images/product-image/asiahome/4pro_360x360.jpg' %}" data-zoom-image="{% static 'images/product-image/asiahome/4pro_800x800.jpg' %}">
-                                        <img src="{% static 'images/product-image/asiahome/4pro_360x360.jpg' %}" alt="" />
+                                    <a data-image="{{ product.img2.url }}" data-zoom-image="{{ product.img2.url }}">
+                                        <img src="{{ product.img2.url }}" alt="" />
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-12">
                             <div class="product-details-content">
-                                <h2>Увлажняющее масло для восстановления блеска волос <br> </h2>
+                                <h2>{{ product.name }} <br> </h2>
                                 <div class="pro-details-rating-wrap">
-                                    <div class="rating-product">
-                                        <i class="ion-android-star"></i>
-                                        <i class="ion-android-star"></i>
-                                        <i class="ion-android-star"></i>
-                                        <i class="ion-android-star"></i>
-                                        <i class="ion-android-star"></i>
-                                    </div>
+                                    {% if product.rating == '1' %}
+                                        <div class="rating-product">
+                                            <i class="ion-android-star"></i>
+                                        </div>
+                                    {% elif product.rating == '2' %}
+                                        <div class="rating-product">
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                        </div>
+                                    {% elif product.rating == '3' %}
+                                        <div class="rating-product">
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                        </div>
+                                    {% elif product.rating == '4' %}
+                                        <div class="rating-product">
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                        </div>
+                                    {% else %}
+                                        <div class="rating-product">
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                            <i class="ion-android-star"></i>
+                                        </div>
+                                    {% endif %}
                                 </div>
                                 <div class="pricing-meta">
                                     <ul>
-                                        <li class="old-price not-cut">230&#8381;</li>
+                                        {% if product.price_disc %}
+                                            <li class="old-price">{{ product.price }}&#8381;</li>
+                                            <li class="old-price not-cut">{{ product.price_disc }}&#8381;</li>
+                                        {% else %}
+                                            <li class="old-price not-cut">{{ product.price }}&#8381;</li>
+                                        {% endif %}
+
                                     </ul>
                                 </div>
                                 <p>Увлажняющее масло для волос, 10 мл

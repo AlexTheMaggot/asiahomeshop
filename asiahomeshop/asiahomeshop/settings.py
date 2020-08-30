@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mainasia.apps.MainasiaConfig',
+    'blog.apps.BlogConfig',
+    'cart.apps.CartConfig',
 ]
 
 MIDDLEWARE = [

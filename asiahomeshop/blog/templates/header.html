@@ -1,0 +1,401 @@
+{% load static %}
+<header class="main-header">
+                <!-- Header Top Start -->
+                <div class="header-top-nav">
+                    <div class="container">
+                        <div class="row">
+                            <!--Left Start-->
+                            <div class="col-lg-4 col-md-4">
+                                <div class="left-text">
+                                    <p>Добро пожаловать в Asiahomeshop</p>
+                                </div>
+                            </div>
+                            <!--Left End-->
+                            <!--Right Start-->
+                            <div class="col-lg-8 col-md-8 text-right">
+                                <div class="header-right-nav">
+                                    <div class="dropdown-navs">
+                                        <ul>
+                                            <!-- Settings Start -->
+                                            <li class="dropdown xs-after-n">
+                                                <a class="angle-icon" href="/#">Настройки</a>
+                                                <ul class="dropdown-nav">
+                                                    <li><a href="my-account.html">Мой аккаунт</a></li>
+                                                    <li><a href="login.html">Войти</a></li>
+                                                </ul>
+                                            </li>
+                                            <!-- Settings End -->
+                                            <!-- Currency Start -->
+
+                                            <!-- Currency End -->
+                                            <!-- Language Start -->
+                                            <!-- Language End -->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Right End-->
+                        </div>
+                    </div>
+                </div>
+                <!-- Header Top End -->
+                <!-- Header Buttom Start -->
+                <div class="header-navigation d-none d-lg-block">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-4">
+                                <!--Contact info Start -->
+                                <div class="contact-link">
+                                    <div class="phone">
+                                        <p>Позвоните нам:</p>
+                                        <a href="tel:+79269267007">+7 926 926 70 07</a>
+                                    </div>
+                                </div>
+                                <!--Contact info End -->
+                            </div>
+                            <!-- Logo Start -->
+                            <div class="col-md-4 col-sm-4">
+                                <div class="logo text-center">
+                                    <a href="/"><img src="{% static 'images/logo/logo4.png' %}" alt="" /></a>
+                                </div>
+                            </div>
+                            <!-- Logo End -->
+                            <div class="col-md-4 col-sm-4">
+                                <!--Header Bottom Account Start -->
+                                <div class="header_account_area home-2">
+                                    <!--Seach Area Start -->
+                                    <div class="header_account_list search_list">
+                                        <a href="javascript:void(0)"><i class="ion-ios-search-strong"></i></a>
+                                        <div class="dropdown_search">
+                                            <form action="/#">
+                                                <input placeholder="Search entire store here ..." type="text" />
+                                                <div class="search-category">
+                                                    <select class="bootstrap-select" name="poscats">
+                                                        <option value="0">All categories</option>
+                                                        <option value="111">
+                                                            Beauty &amp; Health
+                                                        </option>
+                                                        <option value="113">
+                                                            - - Makeup
+                                                        </option>
+                                                        <option value="117">
+                                                            - - - - Eyes
+                                                        </option>
+                                                        <option value="118">
+                                                            - - - - Lips
+                                                        </option>
+                                                        <option value="119">
+                                                            - - - - Face
+                                                        </option>
+                                                        <option value="120">
+                                                            - - - - Makeup Tools
+                                                        </option>
+                                                        <option value="114">
+                                                            - - Skin Care
+                                                        </option>
+                                                        <option value="121">
+                                                            - - - - Face
+                                                        </option>
+                                                        <option value="122">
+                                                            - - - - Eyes
+                                                        </option>
+                                                        <option value="123">
+                                                            - - - - Body
+                                                        </option>
+                                                        <option value="124">
+                                                            - - - - Skin Care Tools
+                                                        </option>
+                                                        <option value="115">
+                                                            - - Health Care
+                                                        </option>
+                                                        <option value="125">
+                                                            - - - - Massage &amp; Relaxation
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                                <button type="submit"><i class="ion-ios-search-strong"></i></button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="social-info">
+                                        <ul>
+                                            <li>
+                                                <a href="https://www.instagram.com/asia_home_shop/"><i class="ion-social-instagram"></i></a>
+                                            </li>
+                                        </ul>
+                                    <div> -->
+                                    <!--Seach Area End -->
+                                    <!--Cart info Start -->
+                                    <div class="cart-info d-flex">
+                                        <div class="mini-cart-warp">
+                                            <a href="/#" class="count-cart"><span>$20.00</span></a>
+                                            <div class="mini-cart-content">
+                                                <ul>
+                                                    <li class="single-shopping-cart">
+                                                        <div class="shopping-cart-img">
+                                                            <a href="single-product.html"><img alt="" src="{% static 'images/product-image/mini-cart/1.jpg' %}" /></a>
+                                                            <span class="product-quantity">1x</span>
+                                                        </div>
+                                                        <div class="shopping-cart-title">
+                                                            <h4><a href="single-product.html">Juicy Couture...</a></h4>
+                                                            <span>$9.00</span>
+                                                            <div class="shopping-cart-delete">
+                                                                <a href="/#"><i class="ion-android-cancel"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="single-shopping-cart">
+                                                        <div class="shopping-cart-img">
+                                                            <a href="single-product.html"><img alt="" src="{% static 'images/product-image/mini-cart/2.jpg' %}" /></a>
+                                                            <span class="product-quantity">1x</span>
+                                                        </div>
+                                                        <div class="shopping-cart-title">
+                                                            <h4><a href="single-product.html">Water and Wind...</a></h4>
+                                                            <span>$11.00</span>
+                                                            <div class="shopping-cart-delete">
+                                                                <a href="/#"><i class="ion-android-cancel"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <div class="shopping-cart-total">
+                                                    <h4>Subtotal : <span>$20.00</span></h4>
+                                                    <h4>Shipping : <span>$7.00</span></h4>
+                                                    <h4>Taxes : <span>$0.00</span></h4>
+                                                    <h4 class="shop-total">Total : <span>$27.00</span></h4>
+                                                </div>
+                                                <div class="shopping-cart-btn text-center">
+                                                    <a class="default-btn" href="checkout.html">checkout</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Cart info End -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Header Bottom Account End -->
+                <!-- Menu Content Start -->
+                <div class="header-buttom-nav sticky-nav">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <div class="main-navigation d-none d-lg-block">
+                                    <ul>
+                                        <li class="menu-dropdown">
+                                            <a href="/">Главная</a>
+                                        </li>
+                                        <li class="menu-dropdown">
+                                            <a href="/shop">Магазин <i class="ion-ios-arrow-down"></i></a>
+                                            <ul class="sub-menu">
+                                                <li class="menu-dropdown position-static">
+                                                    <a href="{% url 'singlepro' %}">Одиночная страница магазина</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-dropdown">
+                                            <a href="{% url 'about' %}">О нас</a>
+                                        </li>
+                                        <li class="menu-dropdown">
+                                            <a href="{% url 'cart' %}">Корзина</a>
+                                        </li>
+                                        <li class="menu-dropdown">
+                                            <a href="{% url 'blog' %}">Блог <i class="ion-ios-arrow-down"></i></a>
+                                            
+                                        </li>
+                                        <li><a href="{% url 'contact' %}">Контакты</a></li>
+                                    </ul>
+                                </div>
+                                <!--Main Navigation End -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Menu Content End -->
+                <!-- Header Buttom Start -->
+                <div class="header-navigation sticky-nav d-lg-none">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <!-- Logo Start -->
+                            <div class="col-md-2 col-sm-2">
+                                <div class="logo">
+                                    <a href="/"><img src="{% static 'images/logo/logo5.png' %}" alt="" /></a>
+                                </div>
+                            </div>
+                            <!-- Logo End -->
+                            <!-- Navigation Start -->
+                            <div class="col-md-10 col-sm-10">
+                                <!--Main Navigation Start -->
+                                <div class="main-navigation d-none d-lg-block">
+                                    <ul>
+                                        <li class="menu-dropdown">
+                                            <a href="/">Главная</a>
+                                        </li>
+                                        <li class="menu-dropdown">
+                                            <a href="/shop">Магазин <i class="ion-ios-arrow-down"></i></a>
+                                            <ul class="sub-menu">
+                                                <li class="menu-dropdown position-static">
+                                                    <a href="{% url 'singlepro' %}">Одиночная страница магазина</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-dropdown">
+                                            <a href="{% url 'about' %}">О нас</a>
+                                        </li>
+                                        <li class="menu-dropdown">
+                                            <a href="{% url 'cart' %}">Корзина</a>
+                                        </li>
+                                        <li class="menu-dropdown">
+                                            <a href="{% url 'blog' %}">Блог <i class="ion-ios-arrow-down"></i></a>
+                                            
+                                        </li>
+                                        <li><a href="{% url 'contact' %}">Контакты</a></li>
+                                    </ul>
+                                </div>
+                                <!--Main Navigation End -->
+                                <!--Header Bottom Account Start -->
+                                <div class="header_account_area">
+                                    <!--Seach Area Start -->
+                                    <div class="header_account_list search_list">
+                                        <a href="javascript:void(0)"><i class="ion-ios-search-strong"></i></a>
+                                        <div class="dropdown_search">
+                                            <form action="/#">
+                                                <input placeholder="Search entire store here ..." type="text" />
+                                                <div class="search-category">
+                                                    <select class="bootstrap-select" name="poscats">
+                                                        <option value="0">All categories</option>
+                                                        <option value="111">
+                                                            Beauty &amp; Health
+                                                        </option>
+                                                        <option value="113">
+                                                            - - Makeup
+                                                        </option>
+                                                        <option value="117">
+                                                            - - - - Eyes
+                                                        </option>
+                                                        <option value="118">
+                                                            - - - - Lips
+                                                        </option>
+                                                        <option value="119">
+                                                            - - - - Face
+                                                        </option>
+                                                        <option value="120">
+                                                            - - - - Makeup Tools
+                                                        </option>
+                                                        <option value="114">
+                                                            - - Skin Care
+                                                        </option>
+                                                        <option value="121">
+                                                            - - - - Face
+                                                        </option>
+                                                        <option value="122">
+                                                            - - - - Eyes
+                                                        </option>
+                                                        <option value="123">
+                                                            - - - - Body
+                                                        </option>
+                                                        <option value="124">
+                                                            - - - - Skin Care Tools
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                                <button type="submit"><i class="ion-ios-search-strong"></i></button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!--Seach Area End -->
+                                    <!--Contact info Start -->
+                                    <div class="contact-link">
+                                        <div class="phone">
+                                            <p>Call us:</p>
+                                            <a href="tel:+79269267007">+7 926 926 70 07</a>
+                                        </div>
+                                    </div>
+                                    <!--Contact info End -->
+                                    <!--Cart info Start -->
+                                    <div class="cart-info d-flex">
+                                        <div class="mini-cart-warp">
+                                            <a href="/#" class="count-cart"><span>$20.00</span></a>
+                                            <div class="mini-cart-content">
+                                                <ul>
+                                                    <li class="single-shopping-cart">
+                                                        <div class="shopping-cart-img">
+                                                            <a href="single-product.html"><img alt="" src="{% static 'images/product-image/mini-cart/1.jpg' %}" /></a>
+                                                            <span class="product-quantity">1x</span>
+                                                        </div>
+                                                        <div class="shopping-cart-title">
+                                                            <h4><a href="single-product.html">Juicy Couture...</a></h4>
+                                                            <span>$9.00</span>
+                                                            <div class="shopping-cart-delete">
+                                                                <a href="/#"><i class="ion-android-cancel"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="single-shopping-cart">
+                                                        <div class="shopping-cart-img">
+                                                            <a href="single-product.html"><img alt="" src="{% static 'images/product-image/mini-cart/2.jpg' %}" /></a>
+                                                            <span class="product-quantity">1x</span>
+                                                        </div>
+                                                        <div class="shopping-cart-title">
+                                                            <h4><a href="single-product.html">Water and Wind...</a></h4>
+                                                            <span>$11.00</span>
+                                                            <div class="shopping-cart-delete">
+                                                                <a href="/#"><i class="ion-android-cancel"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <div class="shopping-cart-total">
+                                                    <h4>Subtotal : <span>$20.00</span></h4>
+                                                    <h4>Shipping : <span>$7.00</span></h4>
+                                                    <h4>Taxes : <span>$0.00</span></h4>
+                                                    <h4 class="shop-total">Total : <span>$27.00</span></h4>
+                                                </div>
+                                                <div class="shopping-cart-btn text-center">
+                                                    <a class="default-btn" href="checkout.html">checkout</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Cart info End -->
+                            </div>
+                        </div>
+                        <!-- mobile menu -->
+                        <div class="mobile-menu-area">
+                            <div class="mobile-menu">
+                                <nav id="mobile-menu-active">
+                                    <ul class="menu-overflow">
+                                        <li class="menu-dropdown">
+                                            <a href="/">Главная</a>
+                                        </li>
+                                        <li class="menu-dropdown">
+                                            <a href="/shop">Магазин</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="{% url 'singlepro' %}">Одиночная страница магазина</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-dropdown">
+                                            <a href="{% url 'about' %}">О нас</a>
+                                        </li>
+                                        <li class="menu-dropdown">
+                                            <a href="{% url 'cart' %}">Корзина</a>
+                                        </li>
+                                        <li class="menu-dropdown">
+                                            <a href="{% url 'blog' %}">Блог</a>
+                                            
+                                        </li>
+                                        <li><a href="{% url 'contact' %}">Контакты</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <!-- mobile menu end-->
+                    </div>
+                </div>
+                <!--Header Bottom Account End -->
+            </header>

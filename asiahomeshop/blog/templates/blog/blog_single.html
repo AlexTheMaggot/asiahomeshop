@@ -1,0 +1,227 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block title %}Сингл блог{% endblock %}
+{% block content %}
+
+
+    <body>
+        <!-- main layout start from here -->
+        <!--====== PRELOADER PART START ======-->
+
+        <!-- <div id="preloader">
+        <div class="preloader">
+            <span></span>
+            <span></span>
+        </div>
+    </div> -->
+
+        <!--====== PRELOADER PART ENDS ======-->
+        <div id="main">
+            <!-- Header Start -->
+            {% include 'header.html' %}
+            <!-- Header End -->
+            <!-- Breadcrumb Area start -->
+            <section class="breadcrumb-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="breadcrumb-content">
+                                <h1 class="breadcrumb-hrading">Одиночная страница блога</h1>
+                                <ul class="breadcrumb-links">
+                                    <li><a href="index.html">Главная</a></li>
+                                    <li>Одиночная страница блога</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Breadcrumb Area End -->
+            <!-- Shop Category Area End -->
+            <div class="shop-category-area single-blog">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-9 order-lg-last col-md-12 order-md-first">
+                            <div class="blog-posts">
+                                <div class="single-blog-post blog-grid-post">
+                                    <div class="blog-post-media">
+                                        <div class="blog-image single-blog">
+                                            {% if post.photo %}
+                                            <a href="blog-single-left-sidebar.html#"><img src="{{ post.photo.url }}" alt="blog" /></a>
+                                            {% else %}
+                                                <a href="blog-single-left-sidebar.html#"><img src="{% static 'images/404.jpg' %}" alt="blog" /></a>
+                                            {% endif %}
+
+                                        </div>
+                                    </div>
+                                    <div class="blog-post-content-inner">
+                                        <h4 class="blog-title"><a href="blog-single-left-sidebar.html#">{{ post.title }}</a></h4>
+                                        <ul class="blog-page-meta">
+                                            <li>
+                                                <a href="blog-single-left-sidebar.html#"><i class="ion-calendar"></i>{{ post.body }}</a>
+                                            </li>
+                                        </ul>
+                                        {{ post.body }}
+                                        <!-- <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                            aliquip commodo consequat. Duis aute irure dolor in rep rehenderit. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiumod tempor incididunt ut labore et dolore magna aliqua.
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod tempor
+                                            incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip commodo consequat.
+                                        </p>
+                                    </div>
+                                    <div class="single-post-content">
+                                        <p class="quate-speech">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in rep rehenderit. Lorem ipsum dolor sit amet,
+                                            consectetur adipisicing elit, sed do eiumod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod tempor incididunt ut labore et
+                                            dolore magna aliqua.
+                                        </p>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiumod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod
+                                            tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam,
+                                            quis nostrud exercitation ullamco laboris nisi ut aliquip commodo consequat. Duis aute irure dolor in rep rehenderit. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiumod tempor
+                                            incididunt ut labore et dolore magna aliqua. consectetur adipisicing elit, sed do eiumod tempor incididunt ut labore et dolore magna aliqua.
+                                        </p>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiumod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod
+                                            tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam,
+                                            quis nostrud exercitation ullamco laboris nisi ut aliquip commodo consequat. Duis aute irure dolor in rep rehenderit. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiumod tempor
+                                            incididunt ut labore et dolore magna aliqua.
+                                        </p> -->
+                                    </div>
+                                </div>
+                                <!-- single blog post -->
+                            </div>
+                            <div class="blog-single-tags-share d-sm-flex justify-content-between">
+                                <div class="blog-single-share d-flex">
+                                    <span class="title">Поделиться</span>
+                                    <ul class="social">
+                                        <li>
+                                            <a href="blog-single-left-sidebar.html#"><i class="ion-social-facebook"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="blog-single-left-sidebar.html#"><i class="ion-social-twitter"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="blog-single-left-sidebar.html#"><i class="ion-social-google"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="blog-single-left-sidebar.html#"><i class="ion-social-instagram"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="blog-related-post">
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <!-- Section Title -->
+                                        <div class="section-title underline-shape">
+                                            <h2>Related Post</h2>
+                                        </div>
+                                        <!-- Section Title -->
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 mb-res-md-30px mb-res-sm-30px">
+                                        <div class="blog-post-media">
+                                            <div class="blog-image single-blog">
+                                                {% if post.photo %}
+                                                <a href="blog-single-left-sidebar.html#"><img src="{{ post.photo.url }}" alt="blog" /></a>
+                                                {% else %}
+                                                <a href="blog-single-left-sidebar.html#"><img src="{% static 'images/404.jpg' %}" alt="blog" /></a>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                        <div class="blog-post-content-inner">
+                                            <h4 class="blog-title"><a href="blog-single-left-sidebar.html">{{ post.title }}</a></h4>
+                                            <ul class="blog-page-meta">
+                                                <li>
+                                                    <a href="blog-single-left-sidebar.html#"><i class="ion-calendar"></i>{{ post.date }}</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-res-md-30px mb-res-sm-30px">
+                                        <div class="blog-post-media">
+                                            <div class="blog-image single-blog">
+                                                <a href="blog-single-left-sidebar.html#"><img src="{% static 'images/blog-image/blog-2.jpg' %}" alt="blog" /></a>
+                                            </div>
+                                        </div>
+                                        <div class="blog-post-content-inner">
+                                            <h4 class="blog-title"><a href="blog-single-left-sidebar.html">{{ post.title }}</a></h4>
+                                            <ul class="blog-page-meta">
+                                                <li>
+                                                    <a href="blog-single-left-sidebar.html#"><i class="ion-calendar"></i>{{ post.date }}</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="blog-post-media">
+                                            <div class="blog-image single-blog">
+                                                <a href="blog-single-left-sidebar.html#"><img src="{% static 'images/blog-image/blog-3.jpg' %}" alt="blog" /></a>
+                                            </div>
+                                        </div>
+                                        <div class="blog-post-content-inner">
+                                            <h4 class="blog-title"><a href="blog-single-left-sidebar.html">{{ post.title }}</a></h4>
+                                            <ul class="blog-page-meta">
+                                                <li>
+                                                    <a href="blog-single-left-sidebar.html#"><i class="ion-calendar"></i> {{ post.body }}</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="blog-comment-form">
+                                <h2 class="comment-heading">Свяжиетсь с нами</h2>
+                                <p>Оставьте почту и имя с комментрием и мы свяжемся с вами</p>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="single-form">
+                                            <label>Ваша форма</label>
+                                            <textarea placeholder="Комментарий"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="single-form">
+                                            <label>Имя:</label>
+                                            <input type="text" placeholder="Name" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="single-form">
+                                            <label>Почта:</label>
+                                            <input type="email" placeholder="Email" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="single-form">
+                                            <input type="submit" value="Отправить" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Shop Category Area End -->
+            <!-- Footer Area start -->
+            {% include 'footer.html' %}
+
+            <!--  Footer Area End -->
+        </div>
+
+        <!-- Modal -->
+        {% include 'modal_wrapper.html' %}
+
+        <!-- Modal end -->
+
+        <!-- Scripts to be loaded  -->
+        <!-- JS
+============================================ -->
+    </body>
+</html>
+{% endblock %}
+
