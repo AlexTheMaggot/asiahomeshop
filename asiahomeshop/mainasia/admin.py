@@ -12,8 +12,8 @@ admin.site.register(Category, CategoryConfig)
 
 
 class ProductConfig(admin.ModelAdmin):
-    fields = ('name', 'category', 'img1', 'img2', 'price', 'price_disc', 'discount', 'new', 'rating', 'slug_product')
-    list_display = ('name', 'category', 'price')
+    fields = ('name', 'category', 'img1', 'img2', 'price', 'price_disc', 'discount', 'new', 'rating', 'slug_product', 'describe')
+    list_display = ('name', 'category', 'price', 'describe')
     prepopulated_fields = {'slug_product': ('name',)}
 
 

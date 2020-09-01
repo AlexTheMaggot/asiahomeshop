@@ -137,3 +137,5 @@ EMAIL_PORT = 465
 EMAIL_USE_SSL = True
 DEFAULT_FROM_EMAIL = 'no-reply@bindoors.ru'
 DEFAULT_TO_EMAIL = 'aitofullstackdev@gmail.com'
+
+CART_SESSION_ID = 'cart'

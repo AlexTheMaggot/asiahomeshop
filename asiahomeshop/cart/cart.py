@@ -11,10 +11,13 @@ class Cart(object):
             cart = self.session[settings.CART_SESSION_ID] = {}
         self.cart = cart
 
-    def add(self, product, quantity=1, update_quantity=False, colors='', sizes=''):
+    def add(self, product, quantity=1, update_quantity=False):
         product_id = str(product.id)
         if product_id not in self.cart:
-            self.cart[product_id] = {'quantity': 0, 'price': str(product.price), 'colors': colors, 'sizes': sizes}
+            if product.price_disc:
+                self.cart[product_id] = {'quantity': 0, 'price': str(product.price_disc)}
+            else:
+                self.cart[product_id] = {'quantity': 0, 'price': str(product.price)}
         if update_quantity:
             self.cart[product_id]['quantity'] = int(quantity)
         else:

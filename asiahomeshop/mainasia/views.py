@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Product
+from cart.forms import CartAddProductForm
 from django.views import View
 from .forms import ApplicationsForm
 import telebot
@@ -8,37 +9,44 @@ from django.views import View
 from blog.models import Post
 from django.views.generic import DetailView
 
-
-
 bot = telebot.TeleBot("1266052691:AAEQ993zB8P6XCbwluG2HtESTNhCNr75x4s")
+
 
 def index(request):
     return render(request, 'mainasia/index.html')
 
+
 def about(request):
-	return render(request, 'mainasia/about.html')
+    return render(request, 'mainasia/about.html')
+
 
 def cart(request):
-	return render(request, 'mainasia/cart.html')
+    return render(request, 'mainasia/cart.html')
+
 
 def contact(request):
-	form = ApplicationsForm()
-	context = {'form': form}
-	return render(request, 'mainasia/contact.html', context)
+    form = ApplicationsForm()
+    context = {'form': form}
+    return render(request, 'mainasia/contact.html', context)
+
 
 def blog(request):
-	return render(request, 'mainasia/blog.html')
+    return render(request, 'mainasia/blog.html')
+
 
 def singlepro(request):
-	return render(request, 'mainasia/single_shop.html')
+    return render(request, 'mainasia/single_shop.html')
+
 
 def blogsingle(request):
-	return render(request, 'mainasia/blog_single.html')
+    return render(request, 'mainasia/blog_single.html')
+
 
 def shop(request):
     products = Product.objects.all()
     context = {'products': products}
     return render(request, 'mainasia/shop.html', context)
+
 
 class ApplicationsView(View):
     def post(self, request):
@@ -58,6 +66,7 @@ class ApplicationsView(View):
             bot.send_message(-328895642, message)
         return redirect('contact')
 
+
 def blog(request):
     posts = Post.objects.all()
     context = {
@@ -73,8 +82,10 @@ class PostDetailView(DetailView):
 
 def product(request, slug_product):
     product = get_object_or_404(Product, slug_product__iexact=slug_product)
+    cart_product_form = CartAddProductForm()
 
     context = {
         'product': product,
+        'cart_product_form': cart_product_form,
     }
     return render(request, 'mainasia/single_shop.html', context)

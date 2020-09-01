@@ -34,6 +34,7 @@ class Product(models.Model):
     discount = models.DecimalField(verbose_name='Размер скидки', max_digits=2, decimal_places=0, null=True, blank=True)
     new = models.BooleanField(verbose_name='Новый товар')
     rating = models.CharField(verbose_name='Рейтинг', max_length=1, choices=RATE_CHOICES)
+    describe = models.TextField(verbose_name='Описание', max_length=250)
 
     def __str__(self):
         return self.name
