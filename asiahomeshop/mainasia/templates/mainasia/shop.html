@@ -141,7 +141,13 @@
                                                     </div>
                                                     <div class="add-to-link">
                                                         <ul>
-                                                            <li class="cart"><a class="cart-btn" href="shop-left-sidebar.html#">В корзину </a></li>
+                                                            <li class="cart">
+                                                                <form action="{% url 'cart:cart_add' p.id %}" method="POST">
+                                                                    {% csrf_token %}
+                                                                    {{ cart_product_form }}
+                                                                    <input style="border-radius: 0;" type="submit" class="cart-btn" value="В корзину ">
+                                                                </form>
+                                                            </li>
                                                             <li>
                                                                 <a href="wishlist.html"><i class="ion-android-favorite-outline"></i></a>
                                                             </li>
