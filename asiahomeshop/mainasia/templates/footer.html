@@ -43,10 +43,10 @@
                                     <div class="footer-links">
                                         <ul>
                                             <li><a href="/#">Доставка</a></li>
-                                            <li><a href="{% url 'shop' %}">О нас</a></li>
-                                            <li><a href="{% url 'shop' %}">Магазин</a></li>
+                                            <li><a href="{% url 'mainasia:shop' %}">О нас</a></li>
+                                            <li><a href="{% url 'mainasia:shop' %}">Магазин</a></li>
                                             <li><a href="/#">Безопасная оплата</a></li>
-                                            <li><a href="{% url 'contact' %}">Связаться с нами</a></li>
+                                            <li><a href="{% url 'mainasia:contact' %}">Связаться с нами</a></li>
                                             <li><a href="{% url 'cart:cart_detail' %}">Корзина</a></li>
                                         </ul>
                                     </div>
@@ -58,10 +58,10 @@
                                     <h4 class="footer-herading">Полезные ссылки</h4>
                                     <div class="footer-links">
                                         <ul>
-                                            <li><a href="{% url 'blog' %}">Блог</a></li>
+                                            <li><a href="{% url 'mainasia:blog' %}">Блог</a></li>
                                             <li><a href="login.html">Войти | Регистрация</a></li>
                                             <li><a href="my-account.html">Мой аккаунт</a></li>
-                                            <li><a href="{% url 'shop' %}">Популярные продукты</a></li>
+                                            <li><a href="{% url 'mainasia:shop' %}">Популярные продукты</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -75,15 +75,7 @@
                                     </div>
 
                                     <div id="mc_embed_signup" class="subscribe-form">
-                                        <form
-                                            id="mc-embedded-subscribe-form"
-                                            class="validate"
-                                            novalidate=""
-                                            target="_blank"
-                                            name="mc-embedded-subscribe-form"
-                                            method="post"
-                                            action="http://devitems.us11.list-manage.com/subscribe/post?u=6bbb9b6f5827bd842d9640c82&amp;id=05d85f18ef"
-                                        >
+                                        <form action="/">
                                             <div id="mc_embed_signup_scroll" class="mc-form">
                                                 <input class="email" type="email" required="" placeholder="Ваш электронный адресс" name="EMAIL" value="" />
                                                 <div class="mc-news" aria-hidden="true" style="position: absolute; left: -5000px;">

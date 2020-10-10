@@ -1,4 +1,10 @@
 from django.db import models
+from django.contrib.auth.models import User
+
+
+class PublishedManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(status='published')
 
 
 class Category(models.Model):
@@ -22,6 +28,10 @@ class Product(models.Model):
         ('4', '4'),
         ('5', '5')
     ]
+    STATUS_CHOICES = (
+    ('draft', 'Draft'),
+    ('published', 'Published'),
+    )
 
     name = models.CharField(verbose_name='Имя', max_length=200)
     img1 = models.ImageField(verbose_name='Изображение 1', upload_to='static/img/products/')
@@ -33,8 +43,11 @@ class Product(models.Model):
                                      blank=True)
     discount = models.DecimalField(verbose_name='Размер скидки', max_digits=2, decimal_places=0, null=True, blank=True)
     new = models.BooleanField(verbose_name='Новый товар')
-    rating = models.CharField(verbose_name='Рейтинг', max_length=1, choices=RATE_CHOICES)
-    describe = models.TextField(verbose_name='Описание', max_length=250)
+    rating = models.CharField(verbose_name='Рейтинг', max_length=1, choices=RATE_CHOICES, blank=True)
+    describe = models.TextField(verbose_name='Описание')
+    status = models.CharField(max_length=10,choices=STATUS_CHOICES,default='draft')
+    objects = models.Manager()
+    published = PublishedManager()
 
     def __str__(self):
         return self.name
@@ -55,3 +68,4 @@ class Applications(models.Model):
     class Meta:
         verbose_name = 'Заявка cо страницы контактов'
         verbose_name_plural = 'Заявка со страницы контактов'
+

@@ -1,0 +1,155 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% load i18n %}
+{% load account %}
+{% block title %}Войти | Аутентификация{% endblock %}
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+{% block content %}
+    <body>
+        <!-- main layout start from here -->
+        <!--====== PRELOADER PART START ======-->
+
+        <!-- <div id="preloader">
+        <div class="preloader">
+            <span></span>
+            <span></span>
+        </div>
+    </div> -->
+
+        <!--====== PRELOADER PART ENDS ======-->
+        <div id="main">
+            <!-- Header Start -->
+            {% include 'header.html' %}
+            <!-- Header End -->
+            <!-- Breadcrumb Area start -->
+            <section class="breadcrumb-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="breadcrumb-content">
+                                <h1 class="breadcrumb-hrading">Войти в аккаунт</h1>
+                                <ul class="breadcrumb-links">
+                                    <li><a href="/">Главная</a></li>
+                                    <li>Авторизация / Регистрация</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Breadcrumb Area End -->
+            <!-- login area start -->
+            <div class="login-register-area mb-60px mt-53px">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7 col-md-12 ml-auto mr-auto">
+                            <div class="login-register-wrapper">
+                                <div class="login-register-tab-list nav">
+                                    <a class="active" data-toggle="tab" href="{% url 'login' %}">
+                                        <h4>Войти</h4>
+                                    </a>
+                                    <a data-toggle="tab" href="{% url 'register' %}">
+                                        <h4>Регистрация</h4>
+                                    </a>
+                                </div>
+                                <div class="tab-content">
+                                    <div id="lg1" class="tab-pane active">
+                                        <div class="login-form-container">
+                                            <div class="login-register-form">
+                                                {% if form.errors %}
+                                                    <p>Your username and password didn't match. Please try again.</p>
+                                                {% endif %}
+
+                                                {% if next %}
+                                                {% if user.is_authenticated %}
+                                                    <p>Your account doesn't have access to this page. To proceed,please login with an account that has access.</p>
+                                                {% else %}
+                                                    <p>Please login to see this page.</p>
+                                                {% endif %}
+                                                {% endif %}
+                                                <form action="{% url 'login' %}" method="post">
+                                                    {% csrf_token %}
+                                                    <input type="text" name="username" placeholder="Username" />
+                                                    <input type="password" name="userpassword" placeholder="Password" />
+                                                    <div class="button-box">
+                                                        <div class="login-toggle-btn">
+                                                            <a href="login.html#">Забыли пароль?</a>
+                                                        </div>
+                                                        <button type="submit"><span>Войти</span></button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="lg2" class="tab-pane">
+                                        <div class="login-form-container">
+                                            <div class="login-register-form">
+                                                <form action="login.html#" method="post">
+                                                    <input type="text" name="user-name" placeholder="Username" />
+                                                    <input type="password" name="user-password" placeholder="Password" />
+                                                    <input name="user-email" placeholder="Email" type="email" />
+                                                    
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% load i18n %}
+
+            {% load account %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+
+<h1>{% trans "Sign In" %}</h1>
+
+
+{% if socialaccount_providers %}
+<p>{% blocktrans with site.name as site_name %}Please sign in with one
+of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
+for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
+
+<div class="socialaccount_ballot">
+
+  <ul class="socialaccount_providers">
+    {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+  </ul>
+
+  <div class="login-or">{% trans 'or' %}</div>
+
+</div>
+
+{% include "socialaccount/snippets/login_extra.html" %}
+
+{% else %}
+<p>{% blocktrans %}If you have not created an account yet, then please
+<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+{% endif %}
+
+<form class="login" method="POST" action="{% url 'account_login' %}">
+  {% csrf_token %}
+  {{ form.as_p }}
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  {% endif %}
+  <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+</form>
+
+{% endblock %}
+
+            <!-- login area end -->
+            <!-- Footer Area start -->
+           {% include 'footer.html' %}
+            <!--  Footer Area End -->
+        </div>
+
+    </body>
+{% endblock %}

@@ -1,4 +1,9 @@
-    {% load static %}
+{% load static %}
+<style>
+    .count-cart:after {
+        content: '{% with total_items=cart|length %}{% if cart|length > 0 %}{{ total_items }}{% else %}0{% endif %}{% endwith %}' !important;
+    }
+</style>
 <header class="main-header">
                 <!-- Header Top Start -->
                 <div class="header-top-nav">
@@ -19,9 +24,14 @@
                                             <!-- Settings Start -->
                                             <li class="dropdown xs-after-n">
                                                 <a class="angle-icon" href="/#">Настройки</a>
-                                                <ul class="dropdown-nav">
+                                                    <ul class="dropdown-nav">
                                                     <li><a href="my-account.html">Мой аккаунт</a></li>
-                                                    <li><a href="login.html">Войти</a></li>
+                                                        {% if user.is_authenticated %}
+                                                            <li><a href="{% url 'account_logout' %}">Выйти</a></li>
+                                                        {% else %}
+                                                            <li><a href="{% url 'account_login' %}">Войти</a></li>
+                                                            <li><a href="{% url 'account_signup' %}">Регистрация</a></li>
+                                                        {% endif %}
                                                 </ul>
                                             </li>
                                             <!-- Settings End -->
@@ -128,46 +138,7 @@
                                     <!--Cart info Start -->
                                     <div class="cart-info d-flex">
                                         <div class="mini-cart-warp">
-                                            <a href="/#" class="count-cart"><span>$20.00</span></a>
-                                            <div class="mini-cart-content">
-                                                <ul>
-                                                    <li class="single-shopping-cart">
-                                                        <div class="shopping-cart-img">
-                                                            <a href="single-product.html"><img alt="" src="{% static 'images/product-image/mini-cart/1.jpg' %}" /></a>
-                                                            <span class="product-quantity">1x</span>
-                                                        </div>
-                                                        <div class="shopping-cart-title">
-                                                            <h4><a href="single-product.html">Juicy Couture...</a></h4>
-                                                            <span>$9.00</span>
-                                                            <div class="shopping-cart-delete">
-                                                                <a href="/#"><i class="ion-android-cancel"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="single-shopping-cart">
-                                                        <div class="shopping-cart-img">
-                                                            <a href="single-product.html"><img alt="" src="{% static 'images/product-image/mini-cart/2.jpg' %}" /></a>
-                                                            <span class="product-quantity">1x</span>
-                                                        </div>
-                                                        <div class="shopping-cart-title">
-                                                            <h4><a href="single-product.html">Water and Wind...</a></h4>
-                                                            <span>$11.00</span>
-                                                            <div class="shopping-cart-delete">
-                                                                <a href="/#"><i class="ion-android-cancel"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                                <div class="shopping-cart-total">
-                                                    <h4>Subtotal : <span>$20.00</span></h4>
-                                                    <h4>Shipping : <span>$7.00</span></h4>
-                                                    <h4>Taxes : <span>$0.00</span></h4>
-                                                    <h4 class="shop-total">Total : <span>$27.00</span></h4>
-                                                </div>
-                                                <div class="shopping-cart-btn text-center">
-                                                    <a class="default-btn" href="checkout.html">checkout</a>
-                                                </div>
-                                            </div>
+                                            <a href="{% url 'cart:cart_detail' %}" class="count-cart"><span>{{ cart.get_total_price }}</span></a>
                                         </div>
                                     </div>
                                 </div>
@@ -188,23 +159,18 @@
                                             <a href="/">Главная</a>
                                         </li>
                                         <li class="menu-dropdown">
-                                            <a href="/shop">Магазин <i class="ion-ios-arrow-down"></i></a>
-                                            <ul class="sub-menu">
-                                                <li class="menu-dropdown position-static">
-                                                    <a href="{% url 'singlepro' %}">Одиночная страница магазина</a>
-                                                </li>
-                                            </ul>
+                                            <a href="{% url 'mainasia:shop' %}">Магазин </a>
                                         </li>
                                         <li class="menu-dropdown">
-                                            <a href="{% url 'about' %}">О нас</a>
+                                            <a href="{% url 'mainasia:about' %}">О нас</a>
                                         </li>
                                         <li class="menu-dropdown">
                                             <a href="{% url 'cart:cart_detail' %}">Корзина</a>
                                         </li>
                                         <li class="menu-dropdown">
-                                            <a href="{% url 'blog' %}">Блог <i class="ion-ios-arrow-down"></i></a>
+                                            <a href="{% url 'mainasia:blog' %}">Блог <i class="ion-ios-arrow-down"></i></a>
                                         </li>
-                                        <li><a href="{% url 'contact' %}">Контакты</a></li>
+                                        <li><a href="{% url 'mainasia:contact' %}">Контакты</a></li>
                                     </ul>
                                 </div>
                                 <!--Main Navigation End -->
@@ -234,23 +200,18 @@
                                         </li>
                                         <li class="menu-dropdown">
                                             <a href="/shop">Магазин <i class="ion-ios-arrow-down"></i></a>
-                                            <ul class="sub-menu">
-                                                <li class="menu-dropdown position-static">
-                                                    <a href="{% url 'singlepro' %}">Одиночная страница магазина</a>
-                                                </li>
-                                            </ul>
                                         </li>
                                         <li class="menu-dropdown">
-                                            <a href="{% url 'about' %}">О нас</a>
+                                            <a href="{% url 'mainasia:about' %}">О нас</a>
                                         </li>
                                         <li class="menu-dropdown">
                                             <a href="{% url 'cart:cart_detail' %}">Корзина</a>
                                         </li>
                                         <li class="menu-dropdown">
-                                            <a href="{% url 'blog' %}">Блог <i class="ion-ios-arrow-down"></i></a>
+                                            <a href="{% url 'mainasia:blog' %}">Блог <i class="ion-ios-arrow-down"></i></a>
                                             
                                         </li>
-                                        <li><a href="{% url 'contact' %}">Контакты</a></li>
+                                        <li><a href="{% url 'mainasia:contact' %}">Контакты</a></li>
                                     </ul>
                                 </div>
                                 <!--Main Navigation End -->
@@ -316,46 +277,7 @@
                                     <!--Cart info Start -->
                                     <div class="cart-info d-flex">
                                         <div class="mini-cart-warp">
-                                            <a href="/#" class="count-cart"><span>$20.00</span></a>
-                                            <div class="mini-cart-content">
-                                                <ul>
-                                                    <li class="single-shopping-cart">
-                                                        <div class="shopping-cart-img">
-                                                            <a href="single-product.html"><img alt="" src="{% static 'images/product-image/mini-cart/1.jpg' %}" /></a>
-                                                            <span class="product-quantity">1x</span>
-                                                        </div>
-                                                        <div class="shopping-cart-title">
-                                                            <h4><a href="single-product.html">Juicy Couture...</a></h4>
-                                                            <span>$9.00</span>
-                                                            <div class="shopping-cart-delete">
-                                                                <a href="/#"><i class="ion-android-cancel"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="single-shopping-cart">
-                                                        <div class="shopping-cart-img">
-                                                            <a href="single-product.html"><img alt="" src="{% static 'images/product-image/mini-cart/2.jpg' %}" /></a>
-                                                            <span class="product-quantity">1x</span>
-                                                        </div>
-                                                        <div class="shopping-cart-title">
-                                                            <h4><a href="single-product.html">Water and Wind...</a></h4>
-                                                            <span>$11.00</span>
-                                                            <div class="shopping-cart-delete">
-                                                                <a href="/#"><i class="ion-android-cancel"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                                <div class="shopping-cart-total">
-                                                    <h4>Subtotal : <span>$20.00</span></h4>
-                                                    <h4>Shipping : <span>$7.00</span></h4>
-                                                    <h4>Taxes : <span>$0.00</span></h4>
-                                                    <h4 class="shop-total">Total : <span>$27.00</span></h4>
-                                                </div>
-                                                <div class="shopping-cart-btn text-center">
-                                                    <a class="default-btn" href="checkout.html">checkout</a>
-                                                </div>
-                                            </div>
+                                            <a href="{% url 'cart:cart_detail' %}" class="count-cart"><span>{{ cart.get_total_price }}</span></a>
                                         </div>
                                     </div>
                                 </div>
@@ -372,23 +294,18 @@
                                         </li>
                                         <li class="menu-dropdown">
                                             <a href="/shop">Магазин</a>
-                                            <ul>
-                                                <li>
-                                                    <a href="{% url 'singlepro' %}">Одиночная страница магазина</a>
-                                                </li>
-                                            </ul>
                                         </li>
                                         <li class="menu-dropdown">
-                                            <a href="{% url 'about' %}">О нас</a>
+                                            <a href="{% url 'mainasia:about' %}">О нас</a>
                                         </li>
                                         <li class="menu-dropdown">
                                             <a href="{% url 'cart:cart_detail' %}">Корзина</a>
                                         </li>
                                         <li class="menu-dropdown">
-                                            <a href="{% url 'blog' %}">Блог</a>
+                                            <a href="{% url 'mainasia:blog' %}">Блог</a>
                                             
                                         </li>
-                                        <li><a href="{% url 'contact' %}">Контакты</a></li>
+                                        <li><a href="{% url 'mainasia:contact' %}">Контакты</a></li>
                                     </ul>
                                 </nav>
                             </div>

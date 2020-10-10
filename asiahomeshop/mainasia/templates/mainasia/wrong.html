@@ -1,0 +1,23 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block title %}Главная{% endblock %}
+{% block content %}
+<body>
+	{% include 'header.html' %}
+	<section class="breadcrumb-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="breadcrumb-content">
+                                <h1 class="breadcrumb-hrading">Ой, ошибка!</h1>
+                                <ul class="breadcrumb-links">
+                                    <li><a href="{% url 'mainasia:index' %}">Главная</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+	{% include 'footer.html' %}
+</body>
+{% endblock %}

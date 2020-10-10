@@ -76,7 +76,7 @@
                                         <div class="single-blog-post blog-grid-post mt-30">
                                             <div class="blog-post-media">
                                                 <div class="blog-image">
-                                                    <a href="{% url 'post_detail' p.pk %}">
+                                                    <a href="{% url 'mainasia:post_detail' p.pk %}">
                                                         {% if p.photo %}
                                                         <img src="{{ p.photo.url }}" alt="blog" /></a>
                                                         {% else %}
@@ -85,14 +85,14 @@
                                                 </div>
                                             </div>
                                             <div class="blog-post-content-inner mt-30">
-                                                <h4 class="blog-title"><a href="{% url 'post_detail' p.pk %}">{{ p.title }}</a></h4>
+                                                <h4 class="blog-title"><a href="{% url 'mainasia:post_detail' p.pk %}">{{ p.title }}</a></h4>
                                                 <ul class="blog-page-meta">
                                                     <li>
-                                                        <a href="{% url 'post_detail' p.pk %}"><i class="ion-calendar"></i> {{ p.date }}</a>
+                                                        <a href="{% url 'mainasia:post_detail' p.pk %}"><i class="ion-calendar"></i> {{ p.date }}</a>
                                                     </li>
                                                 </ul>
                                                 <p>{{ p.body }}</p>
-                                                <a class="read-more-btn" href="{% url 'post_detail' p.pk %}"> Читать <i class="ion-android-arrow-dropright-circle"></i></a>
+                                                <a class="read-more-btn" href="{% url 'mainasia:post_detail' p.pk %}"> Читать <i class="ion-android-arrow-dropright-circle"></i></a>
                                             </div>
                                         </div>
                                         <!-- single blog post -->

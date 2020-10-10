@@ -1,0 +1,94 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block title %}Страница заказа{% endblock %}
+{% block content %}
+<body>
+	{% include 'header.html' %}
+	<section class="checkout">
+            <div class="container">
+
+                <header class="hidden">
+                    <h3 class="h3 title">Checkout - Step 2</h3>
+                </header>
+
+                <!-- ========================  Cart navigation ======================== -->
+
+                <div class="clearfix">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <a href="/cart" class="btn btn-clean-dark"><span class="icon icon-chevron-left"></span> Назад к корзине</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================  Delivery ======================== -->
+
+                <div class="cart-wrapper">
+
+                    <div class="note-block">
+                        <div class="row">
+
+                            <!-- === left content === -->
+
+                            <div class="col-md-6 col-md-offset-3">
+
+                                <!-- === login-wrapper === -->
+
+                                <div class="login-wrapper">
+
+                                    <div class="white-block">
+
+                                        <div class="login-block login-block-signup">
+                                            <form action="{% url 'cart:ordersend' %}" method="POST">
+                                            <div class="h4">Введите данные</div>
+
+                                            <hr/>
+
+
+                                            {% csrf_token %}
+
+                                            <div class="row">
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <input type="text" value="" class="form-control" name="name" placeholder="Имя">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <input type="text" value="" class="form-control" name="phone" placeholder="Номер телефона">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12">
+
+                                                    <div class="form-group">
+                                                        <input type="text" value="" name="mail" class="form-control" placeholder="E-mail адрес">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <hr />
+                                                </div>
+
+                                                <div class="col-md-12">
+                                                    <input type="submit" class="btn btn-main btn-block" value="Подтвердить заказ">
+                                                </div>
+
+                                            </div>
+                                            </form>
+                                        </div> <!--/signup-->
+                                    </div>
+                                </div> <!--/login-wrapper-->
+                            </div> <!--/col-md-6-->
+                            <!-- === right content === -->
+
+                        </div>
+                    </div>
+                </div>
+            </div> <!--/container-->
+        </section>
+        {% include 'footer.html' %}
+
+</body>
+{% endblock %}
